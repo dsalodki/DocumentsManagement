@@ -59,7 +59,7 @@ namespace DocumentsUploadingDownloading.Controllers
                 {
                     FileName = file.FileName,
                     Content = memoryStream.ToArray(),
-                    Create = DateTime.Now,
+                    Create = DateTime.UtcNow,
                 };
 
                 await _db.Documents.AddAsync(doc);
