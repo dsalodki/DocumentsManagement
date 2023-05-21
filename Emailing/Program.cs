@@ -1,4 +1,6 @@
+using Emailing.Models;
 using Emailing.RabbitMq;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHostedService<RabbitMqListener>();
 
+builder.Services.AddScoped<IScopedProcessingService, DefaultScopedProcessingService>();
+
 builder.Services.AddControllers();
+
+builder.Services.AddEntityFrameworkNpgsql().AddDbContext<EmailingDbContext>(
+    opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
