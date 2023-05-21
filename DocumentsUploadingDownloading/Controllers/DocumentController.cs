@@ -1,4 +1,6 @@
 ﻿using DocumentsUploadingDownloading.Models;
+using DocumentsUploadingDownloadingApi.Models;
+using DocumentsUploadingDownloadingApi.RabbitMQ;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +14,12 @@ namespace DocumentsUploadingDownloading.Controllers
         private const string _mimeType = "text/plain";
         private const long _maxFileSize = 1048576;
         private static readonly string[] _acceptableFileTypes = { ".txt" };
+        private readonly IRabbitMqService _mqService;
 
-        public DocumentController(DocumentsApiContext db)
+        public DocumentController(DocumentsApiContext db, IRabbitMqService mqService)
         {
             _db = db;
+            _mqService = mqService;
         }
 
         [HttpGet("{id}")]
@@ -64,6 +68,15 @@ namespace DocumentsUploadingDownloading.Controllers
 
                 await _db.Documents.AddAsync(doc);
                 await _db.SaveChangesAsync();
+
+                var message = new MqDocument
+                {
+                    Content = doc.Content,
+                    FileName = doc.FileName,
+                    Id = doc.Id
+                };
+
+                _mqService.SendMessage(message);
 
                 return Ok(doc.Id);
             }
