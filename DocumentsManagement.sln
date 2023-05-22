@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentsUploadingDownloadingApi", "DocumentsUploadingDownloading\DocumentsUploadingDownloadingApi.csproj", "{A04F9BDB-2CF2-48DC-BF11-79CC8BBC2809}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentsUploadingDownloadingApi.IntegrationTests", "DocumentsUploadingDownloadingApi.IntegrationTests\DocumentsUploadingDownloadingApi.IntegrationTests.csproj", "{78EAC745-6009-4F07-824B-B0EAFF6CF192}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emailing", "Emailing\Emailing.csproj", "{31764609-0CE5-47AD-8185-D4361D8D0CD9}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A04F9BDB-2CF2-48DC-BF11-79CC8BBC2809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04F9BDB-2CF2-48DC-BF11-79CC8BBC2809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04F9BDB-2CF2-48DC-BF11-79CC8BBC2809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04F9BDB-2CF2-48DC-BF11-79CC8BBC2809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EAC745-6009-4F07-824B-B0EAFF6CF192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EAC745-6009-4F07-824B-B0EAFF6CF192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EAC745-6009-4F07-824B-B0EAFF6CF192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EAC745-6009-4F07-824B-B0EAFF6CF192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
