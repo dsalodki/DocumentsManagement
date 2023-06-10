@@ -1,6 +1,6 @@
-﻿using DocumentsUploadingDownloadingApi.Models;
-using Emailing.Models;
+﻿using Emailing.Models;
 using Microsoft.EntityFrameworkCore;
+using Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Net;

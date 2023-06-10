@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentsUploadingDownloadi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emailing", "Emailing\Emailing.csproj", "{31764609-0CE5-47AD-8185-D4361D8D0CD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{1B00E598-F79E-4C5B-8465-D2906BA5C7B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31764609-0CE5-47AD-8185-D4361D8D0CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B00E598-F79E-4C5B-8465-D2906BA5C7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B00E598-F79E-4C5B-8465-D2906BA5C7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B00E598-F79E-4C5B-8465-D2906BA5C7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B00E598-F79E-4C5B-8465-D2906BA5C7B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

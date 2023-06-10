@@ -1,22 +1,22 @@
 ﻿using DocumentsUploadingDownloading.Models;
-using DocumentsUploadingDownloadingApi.Models;
 using DocumentsUploadingDownloadingApi.RabbitMQ;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models;
+using System.Net.Mime;
 
 namespace DocumentsUploadingDownloading.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DocumentController : ControllerBase
+    public class DocumentsController : ControllerBase
     {
         private readonly DocumentsApiContext _db;
-        private const string _mimeType = "text/plain";
         private const long _maxFileSize = 1048576;
         private static readonly string[] _acceptableFileTypes = { ".txt" };
         private readonly IRabbitMqService _mqService;
 
-        public DocumentController(DocumentsApiContext db, IRabbitMqService mqService)
+        public DocumentsController(DocumentsApiContext db, IRabbitMqService mqService)
         {
             _db = db;
             _mqService = mqService;
@@ -32,14 +32,11 @@ namespace DocumentsUploadingDownloading.Controllers
                 return NotFound();
             }
 
-
-            return new FileContentResult(doc.Content, _mimeType)
-            {
-                FileDownloadName = doc.FileName
-            };
+            return File(doc.Content, MediaTypeNames.Text.Plain, fileDownloadName: doc.FileName);
         }
 
         [HttpPost]
+        [Microsoft.AspNetCore.Mvc.ProducesResponseType(201)]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
             long size = file.Length;
@@ -78,7 +75,7 @@ namespace DocumentsUploadingDownloading.Controllers
 
                 _mqService.SendMessage(message);
 
-                return Ok(doc.Id);
+                return new ObjectResult(doc.Id) { StatusCode = StatusCodes.Status201Created };
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Emailing.Models
                 new Status { Id = 2, Name = "SentEmail" }
                 );
 
-            builder.Entity<Document>().HasOne(e => e.Status).WithMany(e => e.Documents).HasForeignKey(e => e.StatusId).IsRequired();
+            builder.Entity<Document>().HasOne(e => e.Status).WithMany().HasForeignKey(e => e.StatusId).IsRequired();
         }
 
         public DbSet<Document> Documents { get; set; }

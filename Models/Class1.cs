@@ -1,4 +1,4 @@
-﻿namespace DocumentsUploadingDownloadingApi.Models
+﻿namespace Models
 {
     public class MqDocument
     {

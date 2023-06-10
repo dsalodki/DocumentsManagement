@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DocumentsUploadingDownloading.Models
 {
+    /// <summary>
+    /// Document entity
+    /// </summary>
     public class Document
     {
         [Key]

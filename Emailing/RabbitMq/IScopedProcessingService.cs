@@ -1,4 +1,4 @@
-﻿using DocumentsUploadingDownloadingApi.Models;
+﻿using Models;
 
 namespace Emailing.RabbitMq
 {

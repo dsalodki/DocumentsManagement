@@ -79,9 +79,8 @@ namespace DocumentsUploadingDownloadingApi.IntegrationTests
 
 
             byte[] actualBytes = await response.Content.ReadAsByteArrayAsync();
-            string actualContent = Encoding.UTF8.GetString(actualBytes);
 
-            Assert.AreEqual(expectedContent, actualContent);
+            Assert.IsTrue(expectedBytes.SequenceEqual(actualBytes));
         }
 
         [Test]

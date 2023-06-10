@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Net;
-using DocumentsUploadingDownloadingApi.Models;
+using Models;
 
 namespace Emailing.RabbitMq
 {
